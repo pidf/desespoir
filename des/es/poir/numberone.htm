@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>desespoir</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: "Times New Roman", Times, serif;
+            text-align: center;
+        }
+
+        .image {
+            position: relative;
+            display: inline-block;
+            max-width: 85vw;
+            margin-top: 8vh;
+        }
+
+        .image img {
+            display: block;
+            max-width: 100%;
+            -webkit-mask-image: radial-gradient(
+                ellipse at center,
+                #000 65%,
+                transparent 100%
+            );
+            mask-image: radial-gradient(
+                ellipse at center,
+                #000 65%,
+                transparent 100%
+            );
+        }
+
+        .number {
+            position: absolute;
+            top: 7%;
+            right: 7%;
+            font-size: 42px;
+            color: white;
+            text-shadow: 0 0 8px #000;
+        }
+
+        @font-face {
+            font-family: "Ty";
+            src: url("https://desespoir.vercel.app/f/ty.ttf");
+        }
+
+        .text {
+            font-family: "Ty", serif;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="image">
+        <img src="https://desespoir.vercel.app/numberone.jpg">
+        <div class="number">1</div>
+    </div>
+
+    <div class="text">
+        welcome to desespoir . . change the url to get to the next room!
+    </div>
+
+</body>
+</html>
