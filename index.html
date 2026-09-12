@@ -1,115 +1,136 @@
+<!-- looking for hints here? :-) -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>desespoir</title>
+<meta charset="UTF-8">
+<title>desespoir</title>
 
-    <style>
-        @font-face {
-            font-family: Syam;
-            src: url("https://desespoir.vercel.app/f/syam.ttf");
-        }
+<style>
+@font-face {
+    font-family: Syam;
+    src: url("https://desespoir.vercel.app/f/syam.ttf");
+}
+@font-face {
+    font-family: Ty;
+    src: url("https://desespoir.vercel.app/f/ty.ttf");
+}
 
-        @font-face {
-            font-family: Ty;
-            src: url("https://desespoir.vercel.app/f/ty.ttf");
-        }
+html,body {
+    margin:0;
+    width:100%;
+    height:100%;
+    background:#000;
+}
 
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-        }
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.container {
+    text-align:center;
+}
 
-        .xc {
-            text-align: center;
-        }
+.title-container {
+    position:relative;
+    display:inline-block;
+}
 
-        .title {
-            font-family: Syam, sans-serif;
-            font-size: 120px;
-            line-height: 1;
-            text-decoration: none;
+.version {
+    position:absolute;
+    bottom:100%;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:Syam,sans-serif;
+    font-size:28px;
+    color:#fff;
+    opacity:0;
+    pointer-events:none;
+    white-space:nowrap;
+}
 
-            background: linear-gradient(
-                to bottom,
-                #777 25%,
-                #fff 50%,
-                #777 75%
-            );
+.title-container:hover .version {
+    opacity:1;
+}
 
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+.title {
+    font-family:Syam,sans-serif;
+    font-size:120px;
+    line-height:1;
+    text-decoration:none;
+    background:linear-gradient(to bottom,#777 25%,#fff 50%,#777 75%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-            transition: none;
-        }
+.title:hover {
+    background:linear-gradient(to bottom,#fff 0%,#777 50%,#fff 100%);
+    font-weight:lighter;
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-        .title:hover {
-            background: linear-gradient(
-                to bottom,
-                #fff 0%,
-                #777 50%,
-                #fff 100%
-                
-            );
-            font-weight: lighter;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.subtitle {
+    margin-top:25px;
+    font-family:Ty,sans-serif;
+    font-size:22px;
+    color:#fff;
+}
 
-        .subtitle {
-            margin-top: 25px;
-            font-family: Ty, sans-serif;
-            font-size: 22px;
-            color: #fff;
-        }
+.hints {
+    margin-top:45px;
+    font-family:Ty,sans-serif;
+    font-size:18px;
+}
 
-        .hints { 
-            margin-top: 45px;
-            font-family: Ty, sans-serif; 
-            font-size: 18px; 
-        }
-        .hints a {
-            color: #fff; 
-            text-decoration: none; 
-        }
-        .hints a:hover { 
-            text-decoration: underline; 
-        } 
-        .hints sup { 
-            font-size: 10px; 
-            margin-left: 2px; 
-        }
-    </style>
+.hints a {
+    color:#fff;
+    text-decoration:none;
+}
+
+.hints a:hover {
+    text-decoration:underline;
+}
+
+.hints sup {
+    font-size:10px;
+    margin-left:5px;
+}
+</style>
 </head>
 
 <body>
-    <div class="xc">
-        <a class="title" href="https://desespoir.vercel.app/des/es/poir/numberone.htm">desespoir</a>
-        <div class="subtitle">click above to begin . . .</div>
-    </div>
+<div class="container">
 
-    <div class="hints">
-        <a href="https://desespoir.vercel.app/hintsandrules.html">
-            hints and rules
-    </div>
-    
-    <div class="hints">
-        <a href="https://desespoir.vercel.app/s/r.html">
-            2 
-    </div>
-    <div class="hints">
-        <a href="https://desespoir.vercel.app/hr.html">
-            3
-    </div>
+<div class="xc">
+<div class="title-container">
+<div class="version">v1.0.8</div>
+<a class="title" href="https://desespoir.vercel.app/des/es/poir/numberone.htm">desespoir</a>
+</div>
+
+<div class="subtitle">click above to begin . . .</div>
+</div>
+
+<div class="hints">
+<a href="https://desespoir.vercel.app/hintsandrules.html">hints and rules</a>
+<sup><a href="https://desespoir.vercel.app/s/r.html">1</a></sup>
+<sup><a href="https://desespoir.vercel.app/hr.html">2</a></sup>
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll("a").forEach(a => {
+    a.addEventListener("contextmenu", e => {
+        e.preventDefault();
+        navigator.clipboard.writeText(a.href);
+    });
+});
+</script>
+
 </body>
 </html>
